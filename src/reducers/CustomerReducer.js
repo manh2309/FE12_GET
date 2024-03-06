@@ -31,6 +31,28 @@ export default (state = DEFAULTE_STATE, action) => {
                 error: true,
                 errorMessage: action.payload.errorMessage
             }
+
+            case types.DELETE_CUSTOMER_REQUEST:
+                return {
+                    ...state,
+                    isFetching: true
+                }
+            case types.DELETE_CUSTOMER_SUCCESS:
+                return {
+                    ...state,
+                    dataFetching: true,
+                    isFetching: false,
+                    error: false,
+                    errorMessage: null
+                    
+                }
+            case types.DELETE_CUSTOMER_FAILURE:
+                return {
+                    ...state,
+                    isFetching: false,
+                    error: true,
+                    errorMessage: action.payload.errorMessage
+                }    
         default:
             return state
     }
