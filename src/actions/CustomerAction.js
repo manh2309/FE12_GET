@@ -5,3 +5,9 @@ export function getListCustomer(payload) {
         payload
     })
 } 
+export function delListCustomer(payload) {
+    return ({
+        type: types.DELETE_CUSTOMER_REQUEST,
+        payload:payload
+    })
+}

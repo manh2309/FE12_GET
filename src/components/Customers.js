@@ -1,6 +1,7 @@
 import { Component } from "react";
-
+import CustomerDel from "../containers/CustomerDel"
 class Customers extends Component {
+
     render() {
         let listData = [];
         if (this.props.items.status) {
@@ -8,9 +9,10 @@ class Customers extends Component {
                 return (
                     <tr key={key}>
                         <td>{item.id}</td>
-                        <td>{item.tenKh}</td>
-                        <td>{item.diaChi}</td>
-                        <td>{item.dienThoai}</td>
+                        <td>{item.name}</td>
+                        <td>{item.address}</td>
+                        <td>{item.phone}</td>
+                        <CustomerDel customer ={item.id}/>
                     </tr>
                 )
             })
@@ -24,6 +26,7 @@ class Customers extends Component {
                             <th>NAME</th>
                             <th>ADDRESS</th>
                             <th>PHONE</th>
+                            <th>Action</th>
                         </tr>
                         {listData}
                     </tbody>
